@@ -12,7 +12,7 @@ def copy_recursiv(source: Path, destination: Path):
             # Пропуск рекурсиї для самої директорії призначення, щоб уникнути безкінечної рекурсії
             if item.resolve() == destination.resolve():
                 continue
-            copy_recursiv(item, destination / item.name)
+            copy_recursiv(item, destination)
         # інакше файл
         elif item.is_file():
             # створення піддиректорії по розширенню файла
